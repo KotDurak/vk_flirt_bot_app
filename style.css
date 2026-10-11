@@ -276,3 +276,62 @@ body {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+/* ... (все предыдущие стили остаются) ... */
+
+/* === ЗОНА КОМАНДЫ (ПОЛЕ + КНОПКА) === */
+.command-wrapper {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.command-input {
+    flex-grow: 1;
+    background: #19191a;
+    color: #71aaeb;
+    border: 1px solid #3e3f40;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 14px;
+    font-family: monospace;
+    font-weight: 600;
+    text-align: center;
+    cursor: text;
+    outline: none;
+    transition: border-color 0.2s;
+    /* Разрешаем выделение текста */
+    user-select: all;
+    -webkit-user-select: all;
+}
+
+.command-input:hover, .command-input:focus {
+    border-color: #71aaeb;
+}
+
+.copy-btn {
+    flex-shrink: 0;
+    width: 44px; /* Фиксированная ширина для удобного тапа на мобильных */
+    background: #5181b8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copy-btn:hover {
+    background: #6a9fd8;
+}
+
+.copy-btn:active {
+    transform: scale(0.95);
+}
+
+.copy-btn.copied {
+    background: #4bb34b;
+}

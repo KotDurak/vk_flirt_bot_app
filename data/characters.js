@@ -17,7 +17,7 @@ const charactersData = [
         tags: ["Ленивая", "Домашняя", "Уютная"],
         category: "light",
         position: 2,
-        image: ""
+        image: "https://i.ibb.co/6RGyWtfy/nuri.png"
     },
     {
         id: 3,
@@ -27,7 +27,7 @@ const charactersData = [
         tags: ["Гламурная", "Соблазнительная", "Флирт"],
         category: "hot",
         position: 3,
-        image: ""
+        image: "https://i.ibb.co/Cp9cQyvn/slani.png"
     },
     {
         id: 4,
@@ -37,7 +37,7 @@ const charactersData = [
         tags: ["Милая", "Наблюдательная", "Уютная"],
         category: "light",
         position: 4,
-        image: ""
+        image: "https://i.ibb.co/KxLD4Hfq/tzeenchia.png"
     },
     {
         id: 5,
@@ -47,7 +47,7 @@ const charactersData = [
         tags: ["Альтушка", "Требовательная", "Романтика"],
         category: "hot",
         position: 5,
-        image: ""
+        image: "https://i.ibb.co/dJHjN5SK/alisa.png"
     },
     {
         id: 6,
@@ -57,7 +57,7 @@ const charactersData = [
         tags: ["Кот", "Тимлид", "Ворчливый"],
         category: "light",
         position: 6,
-        image: ""
+        image: "https://i.ibb.co/ym6K38DM/barsik.png"
     },
     {
         id: 7,
@@ -67,7 +67,7 @@ const charactersData = [
         tags: ["Застенчивая", "Нежная", "Преданная"],
         category: "adventure",
         position: 7,
-        image: ""
+        image: "https://i.ibb.co/tMVBxKtS/hinata.png"
     },
     {
         id: 8,
@@ -77,7 +77,7 @@ const charactersData = [
         tags: ["Демоница", "Преданная", "Заботливая"],
         category: "adventure",
         position: 8,
-        image: ""
+        image: "https://i.ibb.co/XZxhvmHW/lilia.png"
     },
     {
         id: 9,
@@ -87,7 +87,7 @@ const charactersData = [
         tags: ["Шут", "Приключения", "Удача"],
         category: "adventure",
         position: 12,
-        image: ""
+        image: "https://i.ibb.co/MxchPjXk/luce-rubis.jpg"
     },
     {
         id: 10,
@@ -97,7 +97,7 @@ const charactersData = [
         tags: ["Вампир", "Доминантка", "Властная"],
         category: "hot",
         position: 99,
-        image: ""
+        image: "https://i.ibb.co/LDwxf6j1/lilit.png"
     },
     {
         id: 11,
@@ -107,7 +107,7 @@ const charactersData = [
         tags: ["Диклониус", "Опасная", "Одинокая"],
         category: "dark",
         position: 11,
-        image: ""
+        image: "https://i.ibb.co/FLLLrVxr/image.png"
     },
     {
         id: 12,
@@ -117,7 +117,7 @@ const charactersData = [
         tags: ["Эльфийка", "Романтичная", "Добрая"],
         category: "light",
         position: 10,
-        image: ""
+        image: "https://i.ibb.co/S7VKqJPX/iriel.png"
     },
     {
         id: 13,
@@ -127,7 +127,7 @@ const charactersData = [
         tags: ["Кошка", "Курильщица", "Ленивая"],
         category: "dark",
         position: 11,
-        image: ""
+        image: "https://i.ibb.co/00f5t3R/yani-neko.jpg"
     },
     {
         id: 14,
@@ -137,7 +137,7 @@ const charactersData = [
         tags: ["Дерзкая", "Ночная", "Ироничная"],
         category: "dark",
         position: 13,
-        image: ""
+        image: "https://i.ibb.co/wTTgVcb/tayama-supermarket.jpg"
     },
     {
         id: 15,
@@ -147,7 +147,7 @@ const charactersData = [
         tags: ["Учительница", "Строгая", "Доминантка"],
         category: "hot",
         position: 12,
-        image: ""
+        image: "https://i.ibb.co/S4GXRkZt/reiko-sensei.jpg"
     },
     {
         id: 16,
@@ -157,7 +157,7 @@ const charactersData = [
         tags: ["Айтишница", "Геймерша", "Уютная"],
         category: "light",
         position: 16,
-        image: ""
+        image: "https://i.ibb.co/r2N945yW/shira-chan.jpg"
     },
     {
         id: 17,
@@ -167,7 +167,7 @@ const charactersData = [
         tags: ["Кицуне", "Игривая", "Хитрая"],
         category: "adventure",
         position: 12,
-        image: ""
+        image: "https://i.ibb.co/CpWzb38W/ako-kitsune.jpg"
     },
     {
         id: 18,
@@ -177,7 +177,7 @@ const charactersData = [
         tags: ["Эльфийка", "Заботливая", "Мягкая"],
         category: "light",
         position: 11,
-        image: ""
+        image: "https://i.ibb.co/8nkCkvyL/ilizia.jpg"
     },
     {
         id: 19,
@@ -187,6 +187,6 @@ const charactersData = [
         tags: ["Заботливая", "Уступчивая", "Ласковая"],
         category: "light",
         position: 99,
-        image: ""
+        image: "https://i.ibb.co/CKCndqrq/miya.jpg"
     }
 ];

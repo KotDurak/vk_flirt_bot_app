@@ -70,73 +70,87 @@ function getFilteredCharacters() {
     });
 }
 
-// ============================================
-// РЕНДЕР КАРТОЧЕК
-// ============================================
+// ... (начало файла с инициализацией и категориями остается без изменений) ...
+
 function renderCharacters() {
     const grid = document.getElementById('charactersGrid');
     const stats = document.getElementById('stats');
-    const filtered = getFilteredCharacters();
+
+    const filtered = charactersData.filter(char => {
+        const matchesCategory = currentFilter === 'all' || char.category === currentFilter;
+        const matchesSearch = !searchQuery || char.name.toLowerCase().includes(searchQuery) || char.description.toLowerCase().includes(searchQuery) || char.tags.some(t => t.toLowerCase().includes(searchQuery));
+        return matchesCategory && matchesSearch;
+    });
 
     stats.textContent = `Найдено: ${filtered.length} из ${charactersData.length}`;
 
     if (filtered.length === 0) {
-        grid.innerHTML = '<div class="no-results">😿 Персонажи не найдены<br>Попробуйте изменить поиск или фильтр</div>';
+        grid.innerHTML = '<div class="no-results">😿 Персонажи не найдены</div>';
         return;
     }
 
     grid.innerHTML = filtered.map(char => {
-        const hasImage = char.image && char.image.trim() !== '';
-        // Берем первые 2 буквы имени для заглушки
         const initials = char.name.replace(/[^\wа-яА-ЯёЁ]/g, '').substring(0, 2).toUpperCase() || '?';
+        const hasImage = char.image && char.image.trim() !== '';
 
-        // Если картинки нет или она не загрузится, показываем стильные инициалы
         const imageHtml = hasImage
             ? `<img src="${char.image}" alt="${char.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-               <div class="image-fallback" style="display:none; width:100%; height:100%; background:#2c2d2e; align-items:center; justify-content:center; color:#71aaeb; font-size:48px; font-weight:bold; border-radius:8px;">${initials}</div>`
-            : `<div class="image-fallback" style="width:100%; height:100%; background:#2c2d2e; display:flex; align-items:center; justify-content:center; color:#71aaeb; font-size:48px; font-weight:bold; border-radius:8px;">${initials}</div>`;
+               <div class="image-fallback" style="display:none;">${initials}</div>`
+            : `<div class="image-fallback">${initials}</div>`;
 
         return `
         <div class="character-card">
-            <div class="character-image">
-                ${imageHtml}
-            </div>
+            <div class="character-image">${imageHtml}</div>
             <div class="character-header">
                 <div class="character-name">${char.name}</div>
                 <div class="character-position">#${char.position}</div>
             </div>
             <div class="character-description">${char.description}</div>
-            <div class="character-tags">
-                ${char.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+            <div class="character-tags">${char.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
+            
+            <!-- Гибридная зона: поле для выделения + кнопка -->
+            <div class="command-wrapper">
+                <input type="text" class="command-input" readonly value="/select ${char.slug}" onclick="this.select()" title="Выдели и скопируй">
+                <button class="copy-btn" onclick="copyCommand('${char.slug}', this)">📋</button>
             </div>
-            <button class="copy-btn" data-slug="${char.slug}">
-                📋 Скопировать: /select ${char.slug}
-            </button>
-        </div>
-    `}).join('');
-
-    document.querySelectorAll('.copy-btn').forEach(btn => {
-        btn.onclick = () => copyCommand(btn.dataset.slug, btn);
-    });
+        </div>`;
+    }).join('');
 }
 
-// ============================================
-// КОПИРОВАНИЕ
-// ============================================
 function copyCommand(slug, btn) {
     const command = `/select ${slug}`;
-    navigator.clipboard.writeText(command).then(() => {
-        const originalHTML = btn.innerHTML;
-        btn.innerHTML = '✅ Скопировано!';
-        btn.classList.add('copied');
-        setTimeout(() => {
-            btn.innerHTML = originalHTML;
-            btn.classList.remove('copied');
-        }, 2000);
-    }).catch(() => {
-        btn.innerHTML = '❌ Ошибка';
-    });
+
+    // Пытаемся использовать Clipboard API (работает на мобильных)
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(command).then(() => {
+            showSuccess(btn);
+        }).catch(() => {
+            showFallbackHint(btn);
+        });
+    } else {
+        showFallbackHint(btn);
+    }
 }
 
-// Запуск
+function showSuccess(btn) {
+    const originalHTML = btn.innerHTML;
+    btn.innerHTML = '✅';
+    btn.classList.add('copied');
+    setTimeout(() => {
+        btn.innerHTML = originalHTML;
+        btn.classList.remove('copied');
+    }, 2000);
+}
+
+function showFallbackHint(btn) {
+    // Если VK заблокировал API (десктоп), подсказываем выделить вручную
+    const originalHTML = btn.innerHTML;
+    btn.innerHTML = '✋';
+    btn.title = 'Выдели текст слева вручную';
+    setTimeout(() => {
+        btn.innerHTML = originalHTML;
+        btn.title = 'Скопировать';
+    }, 2000);
+}
+
 init();
