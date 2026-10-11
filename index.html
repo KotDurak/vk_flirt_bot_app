@@ -17,7 +17,24 @@
     <input type="text" class="search-input" id="searchInput" placeholder="🔍 Поиск по имени или описанию...">
 </div>
 
-<div class="filters" id="filters">
+<div class="filters" id="filters"></div>
+
+<!-- Фильтр по возрасту: 0 - 100+ -->
+<div class="age-filter-container">
+    <div class="age-header">
+        <span class="age-label">🎂 Возраст:</span>
+        <span class="age-value" id="ageDisplay">0 — 100+</span>
+    </div>
+    <div class="range-slider">
+        <div class="age-track-bg"></div>
+        <div class="age-track" id="ageTrack"></div>
+        <input type="range" id="minAge" min="0" max="100" value="0" step="1">
+        <input type="range" id="maxAge" min="0" max="100" value="100" step="1">
+    </div>
+    <div class="age-limits">
+        <span>0</span>
+        <span>100+ (и ∞ для мифических)</span>
+    </div>
 </div>
 
 <div class="stats" id="stats"></div>

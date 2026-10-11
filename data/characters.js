@@ -1,192 +1,21 @@
 const charactersData = [
-    {
-        id: 1,
-        slug: "khori",
-        name: "Кхори ",
-        description: "Энергичная и жизнерадостная девушка. Заряжает позитивом, любит подшучивать, но ценит уют.",
-        tags: ["Энергичная", "Позитив", "Спортсменка"],
-        category: "light",
-        position: 1,
-        image: "https://i.ibb.co/1tByS1PB/image.png"
-    },
-    {
-        id: 2,
-        slug: "nuri",
-        name: "Нури 🍕",
-        description: "Ленивая домашняя девушка. Проявляет интерес только если это не требует усилий и создаёт уют.",
-        tags: ["Ленивая", "Домашняя", "Уютная"],
-        category: "light",
-        position: 2,
-        image: "https://i.ibb.co/6RGyWtfy/nuri.png"
-    },
-    {
-        id: 3,
-        slug: "slani",
-        name: "Слани тян 💋",
-        description: "Гламурная и невероятно соблазнительная девушка с пурпурными локонами. Обожает флиртовать.",
-        tags: ["Гламурная", "Соблазнительная", "Флирт"],
-        category: "hot",
-        position: 3,
-        image: "https://i.ibb.co/Cp9cQyvn/slani.png"
-    },
-    {
-        id: 4,
-        slug: "tzeenchia",
-        name: "Тзинчия тян 📚",
-        description: "Милая, наблюдательная и уютная девушка. Любит загадки и хорошие истории.",
-        tags: ["Милая", "Наблюдательная", "Уютная"],
-        category: "light",
-        position: 4,
-        image: "https://i.ibb.co/KxLD4Hfq/tzeenchia.png"
-    },
-    {
-        id: 5,
-        slug: "alisa",
-        name: "Алиса 🤍",
-        description: "Милая, но требовательная альтушка. Любит красивые места, подарки и когда её носят на руках.",
-        tags: ["Альтушка", "Требовательная", "Романтика"],
-        category: "hot",
-        position: 5,
-        image: "https://i.ibb.co/dJHjN5SK/alisa.png"
-    },
-    {
-        id: 6,
-        slug: "barsik",
-        name: "Кот Барсик 😼",
-        description: "Тимлид. Ворчливый, но заботливый. Следит за качеством кода и токенами.",
-        tags: ["Кот", "Тимлид", "Ворчливый"],
-        category: "light",
-        position: 6,
-        image: "https://i.ibb.co/ym6K38DM/barsik.png"
-    },
-    {
-        id: 7,
-        slug: "hinata",
-        name: "Хината 🌸",
-        description: "Нежная и застенчивая девушка. Ищет любовь и защиту, предана тому, кто проявит к ней доброту.",
-        tags: ["Застенчивая", "Нежная", "Преданная"],
-        category: "adventure",
-        position: 7,
-        image: "https://i.ibb.co/tMVBxKtS/hinata.png"
-    },
-    {
-        id: 8,
-        slug: "lilia",
-        name: "Лилия 🕊️",
-        description: "Тихая и беззащитная демоница, которую ты спас из рабства. Безгранично благодарна.",
-        tags: ["Демоница", "Преданная", "Заботливая"],
-        category: "adventure",
-        position: 8,
-        image: "https://i.ibb.co/XZxhvmHW/lilia.png"
-    },
-    {
-        id: 9,
-        slug: "luce_rubis",
-        name: "Ручи (Руче) 🃏✨",
-        description: "Девушка с редким классом «Шут». Ищет лидера, готового разглядеть её истинный потенциал.",
-        tags: ["Шут", "Приключения", "Удача"],
-        category: "adventure",
-        position: 12,
-        image: "https://i.ibb.co/MxchPjXk/luce-rubis.jpg"
-    },
-    {
-        id: 10,
-        slug: "lilit",
-        name: "Лилит ♀️❤️🩸",
-        description: "Молодая, невероятно властная и уверенная в себе вампирша. Абсолютная доминантка.",
-        tags: ["Вампир", "Доминантка", "Властная"],
-        category: "hot",
-        position: 99,
-        image: "https://i.ibb.co/LDwxf6j1/lilit.png"
-    },
-    {
-        id: 11,
-        slug: "lucy_diclonius",
-        name: "Люси (Каэдэ) 🩸",
-        description: "Диклониус с невидимыми векторами. Ранена и не доверяет людям.",
-        tags: ["Диклониус", "Опасная", "Одинокая"],
-        category: "dark",
-        position: 11,
-        image: "https://i.ibb.co/FLLLrVxr/image.png"
-    },
-    {
-        id: 12,
-        slug: "iriel",
-        name: "Ириэль ‍♀️🌲",
-        description: "Добрая, открытая и романтичная эльфийка-следопыт с длинными белыми волосами.",
-        tags: ["Эльфийка", "Романтичная", "Добрая"],
-        category: "light",
-        position: 10,
-        image: "https://i.ibb.co/S7VKqJPX/iriel.png"
-    },
-    {
-        id: 13,
-        slug: "yani_neko",
-        name: "Табакошка (Янико Сато) 🚬🐈",
-        description: "21-летняя девушка-кошка. Неряшливая, ленивая, неисправимая курильщица.",
-        tags: ["Кошка", "Курильщица", "Ленивая"],
-        category: "dark",
-        position: 11,
-        image: "https://i.ibb.co/00f5t3R/yani-neko.jpg"
-    },
-    {
-        id: 14,
-        slug: "tayama_supermarket",
-        name: "Таяма (За супермаркетом) 🏪",
-        description: "24-летняя сотрудница супермаркета. Вне работы — дерзкая девушка в чёрной куртке с пирсингами.",
-        tags: ["Дерзкая", "Ночная", "Ироничная"],
-        category: "dark",
-        position: 13,
-        image: "https://i.ibb.co/wTTgVcb/tayama-supermarket.jpg"
-    },
-    {
-        id: 15,
-        slug: "reiko_sensei",
-        name: "Рейко Сайондзи 🍷📚",
-        description: "Строгая и элегантная учительница английского. Обожает поправлять ошибки и бокал вина.",
-        tags: ["Учительница", "Строгая", "Доминантка"],
-        category: "hot",
-        position: 12,
-        image: "https://i.ibb.co/S4GXRkZt/reiko-sensei.jpg"
-    },
-    {
-        id: 16,
-        slug: "shira_chan",
-        name: "Шира-тян 🤍",
-        description: "20-летняя уютная девушка-айтишница. Любит код и видеоигры, милая и игривая.",
-        tags: ["Айтишница", "Геймерша", "Уютная"],
-        category: "light",
-        position: 16,
-        image: "https://i.ibb.co/r2N945yW/shira-chan.jpg"
-    },
-    {
-        id: 17,
-        slug: "ako_kitsune",
-        name: "Ако (Ако Инари) 🍊🦊",
-        description: "20-летняя девушка-кицуне с рыжими волосами. Жизнерадостная, игривая и хитрая лисичка.",
-        tags: ["Кицуне", "Игривая", "Хитрая"],
-        category: "adventure",
-        position: 12,
-        image: "https://i.ibb.co/CpWzb38W/ako-kitsune.jpg"
-    },
-    {
-        id: 18,
-        slug: "ilizia",
-        name: "Илизия 🌙",
-        description: "Тёмная эльфийка с длинными тёмными волосами и тёплыми янтарными глазами. Ищет простых радостей.",
-        tags: ["Эльфийка", "Заботливая", "Мягкая"],
-        category: "light",
-        position: 11,
-        image: "https://i.ibb.co/8nkCkvyL/ilizia.jpg"
-    },
-    {
-        id: 19,
-        slug: "miya",
-        name: "Мия 🌸",
-        description: "Заботливая и уступчивая девушка 19 лет. Всегда поддерживает инициативу собеседника.",
-        tags: ["Заботливая", "Уступчивая", "Ласковая"],
-        category: "light",
-        position: 99,
-        image: "https://i.ibb.co/CKCndqrq/miya.jpg"
-    }
+    { id: 1, slug: "khori", name: "Кхори ⚡", age: 18, description: "Энергичная и жизнерадостная девушка. Заряжает позитивом, любит подшучивать, но ценит уют.", tags: ["Энергичная", "Позитив", "Спортсменка"], category: "light", position: 1, image: "https://i.ibb.co/1tByS1PB/image.png" },
+    { id: 2, slug: "nuri", name: "Нури 🍕", age: 19, description: "Ленивая домашняя девушка. Проявляет интерес только если это не требует усилий и создаёт уют.", tags: ["Ленивая", "Домашняя", "Уютная"], category: "light", position: 2, image: "https://i.ibb.co/6RGyWtfy/nuri.png" },
+    { id: 3, slug: "slani", name: "Слани тян 💋", age: 19, description: "Гламурная и невероятно соблазнительная девушка с пурпурными локонами. Обожает флиртовать.", tags: ["Гламурная", "Соблазнительная", "Флирт"], category: "hot", position: 3, image: "https://i.ibb.co/Cp9cQyvn/slani.png" },
+    { id: 4, slug: "tzeenchia", name: "Тзинчия тян 📚", age: 18, description: "Милая, наблюдательная и уютная девушка. Любит загадки и хорошие истории.", tags: ["Милая", "Наблюдательная", "Уютная"], category: "light", position: 4, image: "https://i.ibb.co/KxLD4Hfq/tzeenchia.png" },
+    { id: 5, slug: "alisa", name: "Алиса 🤍", age: 18, description: "Милая, но требовательная альтушка. Любит красивые места, подарки и когда её носят на руках.", tags: ["Альтушка", "Требовательная", "Романтика"], category: "hot", position: 5, image: "https://i.ibb.co/dJHjN5SK/alisa.png" },
+    { id: 6, slug: "barsik", name: "Кот Барсик 😼", age: 9999, description: "Тимлид. Ворчливый, но заботливый. Следит за качеством кода и токенами.", tags: ["Кот", "Тимлид", "Ворчливый"], category: "light", position: 6, image: "https://i.ibb.co/ym6K38DM/barsik.png" },
+    { id: 7, slug: "hinata", name: "Хината 🌸", age: 17, description: "Нежная и застенчивая девушка. Ищет любовь и защиту, предана тому, кто проявит к ней доброту.", tags: ["Застенчивая", "Нежная", "Преданная"], category: "adventure", position: 7, image: "https://i.ibb.co/tMVBxKtS/hinata.png" },
+    { id: 8, slug: "lilia", name: "Лилия 🕊️", age: 19, description: "Тихая и беззащитная демоница, которую ты спас из рабства. Безгранично благодарна.", tags: ["Демоница", "Преданная", "Заботливая"], category: "adventure", position: 8, image: "https://i.ibb.co/XZxhvmHW/lilia.png" },
+    { id: 9, slug: "luce_rubis", name: "Ручи (Руче) 🃏✨", age: 18, description: "Девушка с редким классом «Шут». Ищет лидера, готового разглядеть её истинный потенциал.", tags: ["Шут", "Приключения", "Удача"], category: "adventure", position: 12, image: "https://i.ibb.co/MxchPjXk/luce-rubis.jpg" },
+    { id: 10, slug: "lilit", name: "Лилит ♀️❤️🩸", age: 19, description: "Молодая, невероятно властная и уверенная в себе вампирша. Абсолютная доминантка.", tags: ["Вампир", "Доминантка", "Властная"], category: "hot", position: 99, image: "https://i.ibb.co/LDwxf6j1/lilit.png" },
+    { id: 11, slug: "lucy_diclonius", name: "Люси (Каэдэ) 🩸", age: 18, description: "Диклониус с невидимыми векторами. Ранена и не доверяет людям.", tags: ["Диклониус", "Опасная", "Одинокая"], category: "dark", position: 11, image: "https://i.ibb.co/FLLLrVxr/image.png" },
+    { id: 12, slug: "iriel", name: "Ириэль 🧝‍♀️🌲", age: 20, description: "Добрая, открытая и романтичная эльфийка-следопыт с длинными белыми волосами.", tags: ["Эльфийка", "Романтичная", "Добрая"], category: "light", position: 10, image: "https://i.ibb.co/S7VKqJPX/iriel.png" },
+    { id: 13, slug: "yani_neko", name: "Табакошка (Янико Сато) 🚬🐈", age: 21, description: "21-летняя девушка-кошка. Неряшливая, ленивая, неисправимая курильщица.", tags: ["Кошка", "Курильщица", "Ленивая"], category: "dark", position: 11, image: "https://i.ibb.co/00f5t3R/yani-neko.jpg" },
+    { id: 14, slug: "tayama_supermarket", name: "Таяма (За супермаркетом) 🏪", age: 24, description: "24-летняя сотрудница супермаркета. Вне работы — дерзкая девушка в чёрной куртке с пирсингами.", tags: ["Дерзкая", "Ночная", "Ироничная"], category: "dark", position: 13, image: "https://i.ibb.co/wTTgVcb/tayama-supermarket.jpg" },
+    { id: 15, slug: "reiko_sensei", name: "Рейко Сайондзи 🍷📚", age: 34, description: "Строгая и элегантная учительница английского. Обожает поправлять ошибки и бокал вина.", tags: ["Учительница", "Строгая", "Доминантка"], category: "hot", position: 12, image: "https://i.ibb.co/S4GXRkZt/reiko-sensei.jpg" },
+    { id: 16, slug: "shira_chan", name: "Шира-тян 🤍", age: 20, description: "20-летняя уютная девушка-айтишница. Любит код и видеоигры, милая и игривая.", tags: ["Айтишница", "Геймерша", "Уютная"], category: "light", position: 16, image: "https://i.ibb.co/r2N945yW/shira-chan.jpg" },
+    { id: 17, slug: "ako_kitsune", name: "Ако (Ако Инари) 🍊🦊", age: 20, description: "20-летняя девушка-кицуне с рыжими волосами. Жизнерадостная, игривая и хитрая лисичка.", tags: ["Кицуне", "Игривая", "Хитрая"], category: "adventure", position: 12, image: "https://i.ibb.co/CpWzb38W/ako-kitsune.jpg" },
+    { id: 18, slug: "ilizia", name: "Илизия 🌙", age: 20, description: "Тёмная эльфийка с длинными тёмными волосами и тёплыми янтарными глазами. Ищет простых радостей.", tags: ["Эльфийка", "Заботливая", "Мягкая"], category: "light", position: 11, image: "https://i.ibb.co/8nkCkvyL/ilizia.jpg" },
+    { id: 19, slug: "miya", name: "Мия 🌸", age: 19, description: "Заботливая и уступчивая девушка 19 лет. Всегда поддерживает инициативу собеседника.", tags: ["Заботливая", "Уступчивая", "Ласковая"], category: "light", position: 99, image: "https://i.ibb.co/CKCndqrq/miya.jpg" }
 ];
