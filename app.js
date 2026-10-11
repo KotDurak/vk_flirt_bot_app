@@ -1,15 +1,4 @@
 // ============================================
-// ФИКСИРОВАННЫЕ КАТЕГОРИИ (ровно 5 кнопок)
-// ============================================
-const categories = [
-    { id: 'all',       label: 'Все',              emoji: '' },
-    { id: 'light',     label: 'Лёгкие',           emoji: '☀️' },
-    { id: 'hot',       label: 'Страстные',        emoji: '🔥' },
-    { id: 'dark',      label: 'Тёмные',           emoji: '🌙' },
-    { id: 'adventure', label: 'Приключенческие',  emoji: '🗡️' }
-];
-
-// ============================================
 // СОСТОЯНИЕ
 // ============================================
 let currentFilter = 'all';
@@ -32,11 +21,17 @@ function attachEventListeners() {
 }
 
 // ============================================
-// РЕНДЕР ФИЛЬТРОВ (фиксированный список)
+// РЕНДЕР ФИЛЬТРОВ (ровно 5 кнопок)
 // ============================================
 function renderFilters() {
     const container = document.getElementById('filters');
-    container.innerHTML = '';
+    const categories = [
+        { id: 'all', label: 'Все', emoji: '' },
+        { id: 'light', label: 'Лёгкие', emoji: '☀️' },
+        { id: 'hot', label: 'Страстные', emoji: '🔥' },
+        { id: 'dark', label: 'Тёмные', emoji: '🌙' },
+        { id: 'adventure', label: 'Приключенческие', emoji: '🗡️' }
+    ];
 
     categories.forEach(cat => {
         const btn = document.createElement('button');
@@ -50,12 +45,9 @@ function renderFilters() {
 
 function setFilter(filter) {
     currentFilter = filter;
-
-    // Обновляем визуальное состояние кнопок
     document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.filter === filter);
     });
-
     renderCharacters();
 }
 
@@ -90,14 +82,20 @@ function renderCharacters() {
     }
 
     grid.innerHTML = filtered.map(char => {
-        const safeName = encodeURIComponent(char.name.replace(/[^\w\sа-яА-ЯёЁ]/g, '').substring(0, 15));
-        const fallbackImage = `https://placehold.co/400x600/2c2d2e/71aaeb?text=${safeName}`;
+        const hasImage = char.image && char.image.trim() !== '';
+        // Берем первые 2 буквы имени для заглушки
+        const initials = char.name.replace(/[^\wа-яА-ЯёЁ]/g, '').substring(0, 2).toUpperCase() || '?';
+
+        // Если картинки нет или она не загрузится, показываем стильные инициалы
+        const imageHtml = hasImage
+            ? `<img src="${char.image}" alt="${char.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+               <div class="image-fallback" style="display:none; width:100%; height:100%; background:#2c2d2e; align-items:center; justify-content:center; color:#71aaeb; font-size:48px; font-weight:bold; border-radius:8px;">${initials}</div>`
+            : `<div class="image-fallback" style="width:100%; height:100%; background:#2c2d2e; display:flex; align-items:center; justify-content:center; color:#71aaeb; font-size:48px; font-weight:bold; border-radius:8px;">${initials}</div>`;
 
         return `
         <div class="character-card">
             <div class="character-image">
-                <img src="${char.image || fallbackImage}" alt="${char.name}"
-                     onerror="this.src='${fallbackImage}'; this.onerror=null;">
+                ${imageHtml}
             </div>
             <div class="character-header">
                 <div class="character-name">${char.name}</div>
@@ -113,7 +111,6 @@ function renderCharacters() {
         </div>
     `}).join('');
 
-    // Навешиваем обработчики на кнопки копирования
     document.querySelectorAll('.copy-btn').forEach(btn => {
         btn.onclick = () => copyCommand(btn.dataset.slug, btn);
     });
