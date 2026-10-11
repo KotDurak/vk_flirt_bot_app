@@ -1,6 +1,10 @@
 // ============================================
 // СОСТОЯНИЕ
 // ============================================
+if (window.vkBridge) {
+    vkBridge.send('VKWebAppInit').catch(console.error);
+}
+
 let currentFilter = 'all';
 let searchQuery = '';
 
