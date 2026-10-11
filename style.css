@@ -1,0 +1,278 @@
+/* ============================================
+   БАЗОВЫЕ СТИЛИ
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #19191a;
+    color: #e1e3e6;
+    padding: 16px;
+    padding-bottom: 80px;
+    min-height: 100vh;
+}
+
+/* ============================================
+   ШАПКА
+   ============================================ */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 20px 0;
+}
+
+.header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #71aaeb 0%, #5181b8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 8px;
+}
+
+.header p {
+    color: #939699;
+    font-size: 14px;
+}
+
+/* ============================================
+   ПОИСК
+   ============================================ */
+.search-box {
+    position: sticky;
+    top: 0;
+    background: #19191a;
+    padding: 12px 0;
+    margin-bottom: 16px;
+    z-index: 100;
+}
+
+.search-input {
+    width: 100%;
+    background: #2c2d2e;
+    border: 1px solid #3e3f40;
+    border-radius: 12px;
+    padding: 14px 16px;
+    color: #e1e3e6;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.search-input:focus {
+    border-color: #71aaeb;
+}
+
+.search-input::placeholder {
+    color: #6d7074;
+}
+
+/* ============================================
+   ФИЛЬТРЫ (АДАПТИВНЫЕ, С ПЕРЕНОСОМ)
+   ============================================ */
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    flex-shrink: 0;
+    background: #2c2d2e;
+    border: 1px solid #3e3f40;
+    color: #939699;
+    padding: 10px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.filter-btn:hover {
+    border-color: #71aaeb;
+}
+
+.filter-btn.active {
+    background: #5181b8;
+    border-color: #5181b8;
+    color: white;
+}
+
+/* ============================================
+   СЕТКА ПЕРСОНАЖЕЙ
+   ============================================ */
+.characters-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+/* ============================================
+   КАРТОЧКА ПЕРСОНАЖА
+   ============================================ */
+.character-card {
+    background: #2c2d2e;
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid #3e3f40;
+    transition: all 0.2s;
+}
+
+.character-card:hover {
+    border-color: #5181b8;
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   ЗАГОЛОВОК КАРТОЧКИ
+   ============================================ */
+.character-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+.character-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #e1e3e6;
+    flex: 1;
+}
+
+.character-position {
+    background: #4c75a3;
+    color: white;
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 6px;
+    margin-left: 8px;
+    flex-shrink: 0;
+}
+
+/* ============================================
+   ИЗОБРАЖЕНИЕ ПЕРСОНАЖА (ПОРТРЕТ 2:3)
+   ============================================ */
+.character-image {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 12px;
+    background: #19191a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.character-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.character-card:hover .character-image img {
+    transform: scale(1.03);
+}
+
+/* ============================================
+   ОПИСАНИЕ И ТЕГИ
+   ============================================ */
+.character-description {
+    color: #939699;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.character-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.tag {
+    background: #19191a;
+    color: #71aaeb;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    border: 1px solid #3e3f40;
+}
+
+/* ============================================
+   КНОПКА КОПИРОВАНИЯ
+   ============================================ */
+.copy-btn {
+    width: 100%;
+    background: #5181b8;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.copy-btn:hover {
+    background: #6a9fd8;
+}
+
+.copy-btn:active {
+    transform: scale(0.98);
+}
+
+.copy-btn.copied {
+    background: #4bb34b;
+}
+
+/* ============================================
+   СТАТИСТИКА И ПУСТЫЕ СОСТОЯНИЯ
+   ============================================ */
+.stats {
+    text-align: center;
+    color: #6d7074;
+    font-size: 13px;
+    margin-bottom: 16px;
+}
+
+.no-results,
+.loading {
+    text-align: center;
+    color: #6d7074;
+    padding: 40px 20px;
+    font-size: 16px;
+    grid-column: 1 / -1;
+}
+
+/* ============================================
+   АДАПТИВНОСТЬ
+   ============================================ */
+@media (min-width: 768px) {
+    .characters-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .characters-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

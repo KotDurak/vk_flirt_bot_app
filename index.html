@@ -2,74 +2,41 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Каталог Персонажей</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #19191a;
-            color: #fff;
-            padding: 20px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .card {
-            background: #2c2d2e;
-            border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 15px;
-            cursor: pointer;
-            transition: 0.2s;
-            border: 1px solid #333;
-        }
-        .card:active {
-            transform: scale(0.98);
-            background: #3a3b3c;
-        }
-        .card h3 {
-            margin: 0 0 8px 0;
-            color: #e1e3e6;
-        }
-        .card p {
-            margin: 0;
-            color: #939699;
-            font-size: 14px;
-        }
-        .tag {
-            display: inline-block;
-            background: #4c75a3;
-            color: white;
-            padding: 4px 8px;
-            border-radius: 6px;
-            font-size: 12px;
-            margin-top: 8px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h2>✨ Выбери персонажа</h2>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Каталог Персонажей</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
 
-<div class="card" onclick="selectCharacter('char_5')">
-    <h3>Слани</h3>
-    <p>Длинные пурпурные волосы, гламурный стиль. Любит дразнить.</p>
-    <span class="tag">Четыре Поющих Сердца</span>
-    <span class="tag">Доминирование</span>
+</head>
+<body>
+<div class="header">
+    <h1>🎭 Каталог Персонажей</h1>
+    <p>Выбери своего идеального компаньона</p>
 </div>
 
-<div class="card" onclick="selectCharacter('char_12')">
-    <h3>Шира-тян</h3>
-    <p>Твоя ИИ-ассистентка по коду и не только.</p>
-    <span class="tag">IT</span>
-    <span class="tag">Помощь</span>
+<div class="search-box">
+    <input type="text" class="search-input" id="searchInput" placeholder="🔍 Поиск по имени или описанию...">
 </div>
 
-<script>
-    function selectCharacter(charCommand) {
-        // ЗАМЕНИ -123456789 на ID своего сообщества (с минусом!)
-        const botId = -201266008;
-        const url = `https://vk.com/im?sel=${botId}&text=${encodeURIComponent(charCommand)}`;
-        window.location.href = url;
-    }
-</script>
+<div class="filters" id="filters">
+    <button class="filter-btn active" data-filter="all">Все</button>
+</div>
+
+<div class="stats" id="stats"></div>
+<div class="characters-grid" id="charactersGrid">
+    <div class="loading">Загрузка персонажей...</div>
+</div>
+
+<script src="data/characters.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
