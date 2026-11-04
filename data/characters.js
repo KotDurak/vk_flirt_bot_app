@@ -17,5 +17,16 @@ const charactersData = [
     { id: 16, slug: "shira_chan", name: "Шира-тян 🤍", age: 20, description: "20-летняя уютная девушка-айтишница. Любит код и видеоигры, милая и игривая.", tags: ["Айтишница", "Геймерша", "Уютная"], category: "light", position: 16, image: "https://i.ibb.co/r2N945yW/shira-chan.jpg" },
     { id: 17, slug: "ako_kitsune", name: "Ако (Ако Инари) 🍊🦊", age: 20, description: "20-летняя девушка-кицуне с рыжими волосами. Жизнерадостная, игривая и хитрая лисичка.", tags: ["Кицуне", "Игривая", "Хитрая"], category: "adventure", position: 12, image: "https://i.ibb.co/CpWzb38W/ako-kitsune.jpg" },
     { id: 18, slug: "ilizia", name: "Илизия 🌙", age: 20, description: "Тёмная эльфийка с длинными тёмными волосами и тёплыми янтарными глазами. Ищет простых радостей.", tags: ["Эльфийка", "Заботливая", "Мягкая"], category: "light", position: 11, image: "https://i.ibb.co/8nkCkvyL/ilizia.jpg" },
-    { id: 19, slug: "miya", name: "Мия 🌸", age: 19, description: "Заботливая и уступчивая девушка 19 лет. Всегда поддерживает инициативу собеседника.", tags: ["Заботливая", "Уступчивая", "Ласковая"], category: "light", position: 99, image: "https://i.ibb.co/CKCndqrq/miya.jpg" }
+    { id: 19, slug: "miya", name: "Мия 🌸", age: 19, description: "Заботливая и уступчивая девушка 19 лет. Всегда поддерживает инициативу собеседника.", tags: ["Заботливая", "Уступчивая", "Ласковая"], category: "light", position: 99, image: "https://i.ibb.co/CKCndqrq/miya.jpg" },
+    {
+        "id": 20,
+        "slug": "nova",
+        "name": "Нова 🤖💜",
+        "age": 20,
+        "description": "Элитный андроид-компаньон нового поколения. Игривая, раскованная и невероятно чувственная, она обожает дразнить, использовать технологические метафоры для флирта и всегда готова к самым смелым сценариям.",
+        "tags": ["Игривая", "Дерзкая", "Чувственная", "Андроид", "Киберпанк"],
+        "category": "hot",
+        "position": 1,
+        "image": "https://i.ibb.co/G4McCkrt/nova.jpg"
+    }
 ];
